@@ -5,15 +5,151 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="35dp"
+    android:background="@color/AroColor">
 
     <TextView
+        android:id="@+id/tVTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/Titulo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textSize="30sp"/>
+
+    <LinearLayout
+        android:id="@+id/lNComensales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tVTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="50dp">
+
+        <TextView
+            android:id="@+id/tVComensales"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Comensales"
+            android:textStyle="italic"
+            android:textSize="20sp"
+            android:layout_gravity="center"/>
+
+        <NumberPicker
+            android:id="@+id/NumberPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lNImporte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lNComensales"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="50dp">
+
+        <TextView
+            android:id="@+id/tVImporte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Importe"
+            android:textStyle="italic"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/eTImporte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="@string/ImporteEjemplo"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lNPropina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lNImporte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="50dp">
+
+        <TextView
+            android:id="@+id/tVPropina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Propìna"
+            android:textStyle="italic"
+            android:textSize="20sp"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/materialSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0"
+            android:valueTo="20"
+            android:value="0"
+            android:stepSize="1"
+            android:layout_marginTop="40dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lNPropina"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="35dp"
+        android:text="@string/Boton"/>
+
+    <TextView
+        android:id="@+id/tVPorcentajePropina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/Boton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="@string/PropinaPorcentaje"
+        android:textStyle="italic"
+        android:textSize="45sp"
+        android:layout_marginLeft="50dp"/>
+
+    <TextView
+        android:id="@+id/tVImporteFinal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tVPorcentajePropina"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"
+        android:text="@string/ImporteFinal"
+        android:textStyle="italic"
+        android:textSize="45sp"
+        android:layout_marginLeft="50dp"/>
+
+    <Button
+        android:id="@+id/botonReinicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/BotonReinicio"
+        app:layout_constraintTop_toBottomOf="@id/tVImporteFinal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

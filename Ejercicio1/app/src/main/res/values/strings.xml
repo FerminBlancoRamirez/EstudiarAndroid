@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">a01</string>
+    <string name="Titulo">Calculadora de propinas</string>
+    <string name="Comensales">Introduzca el numero de comensales: (desliza abajo para añadir y hacia arriba para quitar) </string>
+    <string name="NumeroComensales">Introduzca su numero aqui </string>
+    <string name="Importe">Introduzca el importe de la cuenta: </string>
+    <string name="ImporteEjemplo">Ejemplo: 500 </string>
+    <string name="Propìna">Introduzca el porcentaje de propina</string>
+    <string name="ImporteFinal">El importe final individual de cada uno es de: </string>
+    <string name="Boton">Calcular el importe final por comensal</string>
+    <string name="PropinaPorcentaje">Propina: </string>
+    <string name="BotonReinicio">Reiniciar valores</string>
 </resources>
