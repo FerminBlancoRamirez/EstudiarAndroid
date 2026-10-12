@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">a02FormularioIntent</string>
+
+    <!--Texto del main activity-->
+    <string name="Titulo">Formulario Oficial</string>
+    <string name="Nombre">·Nombre completo: </string>
+    <string name="NombreHint">Juanjo Perez Nuñez </string>
+    <string name="CorreoElectronico">·Correo electronico: </string>
+    <string name="CorreoElectronicoHint">JuanjoPerezNuñez@gmail.com </string>
+    <string name="Contraseña">·Contraseña: </string>
+    <string name="ContraseñaHint">[A-Za-z0-9] </string>
+    <string name="Genero">·Genero: </string>
+    <string name="Masculino">Hombre</string>
+    <string name="Femenino">Mujer</string>
+    <string name="Nacionalidad">·Nacionalidad: </string>
+    <string name="Boton">Registrate </string>
+
+    <!--Paises-->
+    <string-array name="paises">
+        <item>Tus paises a escoger son: </item>
+        <item>·España</item>
+        <item>·Francia</item>
+        <item>·Alemania</item>
+        <item>·Italia</item>
+        <item>·Holanda</item>
+        <item>·Suiza</item>
+    </string-array>
+
+    <!--Texto del segundo main-->
+    <string name="Bienvenida">Bienvenido </string>
+    <string name="informacion">Aqui podras ver toda la información correspondiente a tu registro</string>
+    <string name="CorreoMostrar">Tu correo electronico es: </string>
+    <string name="GeneroMostrar">Tu genero es: </string>
+    <string name="NacionalidadMostrar">Tu nacionalidad es: </string>
+
+</resources>
