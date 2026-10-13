@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2"
+    android:background="@color/azulClaro">
+
+    <TextView
+        android:id="@+id/NombreAMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/Bienvenida"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_margin="35dp"/>
+
+    <TextView
+        android:id="@+id/CorreoAMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/NombreAMostrar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/CorreoMostrar"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_margin="35dp"/>
+
+    <TextView
+        android:id="@+id/GeneroAMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/CorreoAMostrar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/GeneroMostrar"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_margin="35dp"/>
+
+    <TextView
+        android:id="@+id/NacionalidadAMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/GeneroAMostrar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/NacionalidadMostrar"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_margin="35dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

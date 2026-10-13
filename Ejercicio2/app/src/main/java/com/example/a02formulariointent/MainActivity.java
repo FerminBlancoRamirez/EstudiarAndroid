@@ -1,9 +1,13 @@
 package com.example.a02formulariointent;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -22,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText contraseña;
     RadioGroup generos;
     Spinner nacionalidad;
+    Button boton;
 
 
     @Override
@@ -40,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         contraseña = findViewById(R.id.IntroducirContraseña);
         generos = findViewById(R.id.generos);
         nacionalidad = findViewById(R.id.spinner);
+        boton=findViewById(R.id.Boton);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
@@ -65,5 +71,58 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Intent intent=new Intent(MainActivity.this, MainActivity2.class);
+        boton.setOnClickListener(e->{
+            if (validarFOrmulario()){
+                intent.putExtra("nombre", nombreCompleto.getText().toString());
+                intent.putExtra("email", correoElectronico.getText().toString());
+                intent.putExtra("password", contraseña.getText().toString());
+                intent.putExtra("genero", generos.getCheckedRadioButtonId()==R.id.Masculino?"Masculino":"Femenino");
+                intent.putExtra("nacionalidad", nacionalidad.getSelectedItem().toString());
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    public boolean validarFOrmulario(){
+        boolean esValido=true;
+
+        String nombre=nombreCompleto.getText().toString().trim();
+        String email=correoElectronico.getText().toString().trim();
+        String password=contraseña.getText().toString().trim();
+
+        if(TextUtils.isEmpty(nombre)){
+            nombreCompleto.setError("Por favor ingresa tu nombre completo");
+            esValido=false;
+        }
+
+        if (TextUtils.isEmpty(email)){
+            correoElectronico.setError("Por favor ingresa tu correo electronico");
+            esValido=false;
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            correoElectronico.setError("Por favor introduce un correo electronico valido");
+            esValido=false;
+        }
+
+        if (TextUtils.isEmpty(password)){
+            contraseña.setError("Por favor ingresa tu contraseña");
+            esValido=false;
+        } else if (password.length()<6) {
+            contraseña.setError("Tu contraseña debe tener mas de 6 caracteres");
+            esValido=false;
+        }
+
+        if (generos.getCheckedRadioButtonId()==-1){
+            Toast.makeText(this, "Por favor selecciona tu genero", Toast.LENGTH_SHORT).show();
+            esValido=false;
+        }
+
+        if (nacionalidad.getSelectedItemPosition()==0){
+            Toast.makeText(this, "Por favor selecciona tu nacionalidad", Toast.LENGTH_SHORT).show();
+            esValido=false;
+        }
+
+        return esValido;
     }
 }
